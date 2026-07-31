@@ -1,0 +1,70 @@
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%);
+}
+
+.blob {
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  will-change: transform;
+  animation: drift 24s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * -8s);
+}
+
+:root[data-theme='light'] .blob {
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+
+.blob:nth-child(1) {
+  background: radial-gradient(circle, var(--accent) 0%, transparent 60%);
+  top: -20vmax;
+  left: -15vmax;
+}
+.blob:nth-child(2) {
+  background: radial-gradient(circle, var(--accent-2) 0%, transparent 60%);
+  top: -10vmax;
+  right: -20vmax;
+  animation-duration: 30s;
+}
+.blob:nth-child(3) {
+  background: radial-gradient(circle, var(--accent-3) 0%, transparent 60%);
+  bottom: -25vmax;
+  left: 20%;
+  opacity: 0.35;
+  animation-duration: 36s;
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='1'/></svg>");
+}
+
+:root[data-theme='light'] .grain { display: none; }
+
+@keyframes drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(6vmax, 4vmax, 0) scale(1.15); }
+  100% { transform: translate3d(-4vmax, 8vmax, 0) scale(0.95); }
+}
+
+@media (max-width: 720px) {
+  .blob { filter: blur(56px); opacity: 0.45; }
+  .grain { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob { animation: none; }
+}

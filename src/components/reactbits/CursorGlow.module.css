@@ -1,0 +1,24 @@
+.glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 400ms ease;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 14%, transparent) 0%, color-mix(in srgb, var(--accent-2) 6%, transparent) 40%, transparent 65%);
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+:root[data-theme='light'] .glow {
+  mix-blend-mode: multiply;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 10%, transparent) 0%, color-mix(in srgb, var(--accent-2) 4%, transparent) 40%, transparent 65%);
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .glow { display: none; }
+}

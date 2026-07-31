@@ -1,0 +1,128 @@
+.grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.wrap { min-height: 100%; }
+.tilt { height: 100%; }
+
+.card {
+  position: relative;
+  border-radius: 22px;
+  height: 100%;
+  isolation: isolate;
+}
+
+.border {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0%,
+    var(--accent) 20%,
+    var(--accent-2) 40%,
+    transparent 60%,
+    transparent 100%
+  );
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card:hover .border {
+  opacity: 1;
+  animation: borderSpin 4s linear infinite;
+}
+
+@keyframes borderSpin {
+  to { --angle: 360deg; }
+}
+
+@supports not (background: conic-gradient(from 0deg, red)) {
+  .card:hover .border { background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+}
+
+.inner {
+  position: relative;
+  padding: 28px;
+  border-radius: 22px;
+  background: var(--surface-2);
+  border: 1px solid var(--divider);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 250ms ease;
+  z-index: 1;
+}
+
+.card:hover .inner {
+  border-color: transparent;
+}
+
+.name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.stack {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stack li {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.card:hover .stack li {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.bullets {
+  margin: 6px 0 0 0;
+  padding: 0 0 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.bullets li { margin: 6px 0; }
+.bullets li::marker { color: var(--accent); }
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+  .inner { padding: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .border { animation: none; opacity: 0.6; }
+}

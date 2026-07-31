@@ -1,0 +1,66 @@
+.road {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.laneLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  height: 1px;
+  background-image: linear-gradient(90deg, var(--divider) 0 20px, transparent 20px 40px);
+  background-size: 40px 1px;
+  animation: laneScroll 0.6s linear infinite;
+}
+
+@keyframes laneScroll {
+  from { background-position: 0 0; }
+  to   { background-position: -40px 0; }
+}
+
+.car {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  filter: drop-shadow(0 6px 10px color-mix(in srgb, var(--accent) 35%, transparent));
+  animation: drive 16s linear infinite;
+}
+
+@keyframes drive {
+  from { transform: translateX(-140px); }
+  to   { transform: translateX(calc(100vw + 40px)); }
+}
+
+.beam {
+  animation: beamPulse 1.4s ease-in-out infinite alternate;
+  transform-origin: 84px 24px;
+}
+
+@keyframes beamPulse {
+  from { opacity: 0.25; }
+  to   { opacity: 0.6; }
+}
+
+.wheel {
+  animation: spin 0.3s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laneLine, .car, .beam, .wheel { animation: none; }
+  .car { display: none; }
+}

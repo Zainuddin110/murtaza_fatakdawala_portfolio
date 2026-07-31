@@ -1,0 +1,8 @@
+node_modules
+dist
+.vite
+.DS_Store
+
+# Source assets — duplicates of the versions in public/
+/murtaza_image.jpeg
+/Murtaza_Fatakdawala_resume.pdf

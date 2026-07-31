@@ -1,0 +1,70 @@
+.wrap {
+  padding: 0 clamp(20px, 5vw, 56px);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 40px clamp(24px, 4vw, 48px);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 50%),
+    radial-gradient(circle at 80% 80%, color-mix(in srgb, var(--accent-2) 12%, transparent), transparent 50%),
+    var(--surface-2);
+  border: 1px solid var(--divider);
+  overflow: hidden;
+}
+
+.grid::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 0deg, transparent 0deg, color-mix(in srgb, var(--accent) 8%, transparent) 90deg, transparent 180deg);
+  animation: statsBg 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes statsBg {
+  to { transform: rotate(360deg); }
+}
+
+.item {
+  min-width: 0;
+  position: relative;
+}
+
+.value {
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+
+.label {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 24ch;
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 32px 28px;
+  }
+  .label { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid::before { animation: none; }
+}
