@@ -75,6 +75,48 @@
   border-color: color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
+.offTheClock {
+  margin-top: 56px;
+}
+
+.offLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.offList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.offChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--divider);
+  color: var(--muted);
+  font-size: 13px;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.offChip svg { font-size: 14px; color: var(--accent); }
+
+.offChip:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
 .footer {
   margin-top: 72px;
   padding-top: 24px;

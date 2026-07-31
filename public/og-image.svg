@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0f"/>
+      <stop offset="1" stop-color="#14141c"/>
+    </linearGradient>
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#a8b8ff"/>
+    </linearGradient>
+    <linearGradient id="car" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a8b8ff"/>
+      <stop offset="1" stop-color="#7c9cff"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.3" cy="0.2" r="0.7">
+      <stop offset="0" stop-color="#7c9cff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c9cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.8" r="0.6">
+      <stop offset="0" stop-color="#c8a2ff" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#c8a2ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Accent line -->
+  <rect x="80" y="150" width="60" height="2" fill="#7c9cff"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="140" font-family="-apple-system, Segoe UI, sans-serif" font-size="20" font-weight="600" letter-spacing="4" fill="#8a8a9a">
+    PORTFOLIO
+  </text>
+
+  <!-- Name -->
+  <text x="80" y="260" font-family="-apple-system, Segoe UI, sans-serif" font-size="96" font-weight="800" fill="url(#name)" letter-spacing="-2">
+    Murtaza
+  </text>
+  <text x="80" y="360" font-family="-apple-system, Segoe UI, sans-serif" font-size="96" font-weight="800" fill="url(#name)" letter-spacing="-2">
+    Fatakdawala
+  </text>
+
+  <!-- Tagline -->
+  <text x="80" y="430" font-family="-apple-system, Segoe UI, sans-serif" font-size="28" font-weight="400" fill="#c8c8d8">
+    Software Engineer · AI/ML · MSc Queen Mary
+  </text>
+
+  <!-- Stat chips -->
+  <g transform="translate(80, 490)">
+    <rect x="0" y="0" width="220" height="60" rx="30" fill="rgba(124,156,255,0.1)" stroke="rgba(124,156,255,0.3)"/>
+    <text x="26" y="38" font-family="ui-monospace, Consolas, monospace" font-size="20" fill="#a8b8ff">97% CNN accuracy</text>
+
+    <rect x="240" y="0" width="220" height="60" rx="30" fill="rgba(124,156,255,0.1)" stroke="rgba(124,156,255,0.3)"/>
+    <text x="266" y="38" font-family="ui-monospace, Consolas, monospace" font-size="20" fill="#a8b8ff">19k faces trained</text>
+
+    <rect x="480" y="0" width="220" height="60" rx="30" fill="rgba(124,156,255,0.1)" stroke="rgba(124,156,255,0.3)"/>
+    <text x="506" y="38" font-family="ui-monospace, Consolas, monospace" font-size="20" fill="#a8b8ff">1,000+ users shipped</text>
+  </g>
+
+  <!-- Car in top-right -->
+  <g transform="translate(900, 200) scale(3.5)">
+    <path d="M6 30 L6 26 Q6 22 10 22 L22 22 L30 12 Q32 10 36 10 L62 10 Q66 10 68 12 L78 22 L86 22 Q90 22 90 26 L90 30 L82 30 Q80 34 76 34 Q72 34 70 30 L26 30 Q24 34 20 34 Q16 34 14 30 L6 30 Z" fill="url(#car)"/>
+    <path d="M32 22 L38 14 L60 14 L66 22 Z" fill="#c8d4ff" opacity="0.9"/>
+    <path d="M49 14 L49 22" stroke="rgba(0,0,0,0.25)" stroke-width="0.8"/>
+    <circle cx="20" cy="32" r="5" fill="#0a0a0f"/>
+    <circle cx="20" cy="32" r="2.2" fill="#3a3a4a"/>
+    <circle cx="76" cy="32" r="5" fill="#0a0a0f"/>
+    <circle cx="76" cy="32" r="2.2" fill="#3a3a4a"/>
+    <circle cx="84" cy="24" r="1.8" fill="#fff8cc"/>
+  </g>
+
+  <!-- Brand mark bottom-right -->
+  <rect x="1080" y="550" width="48" height="48" rx="12" fill="none" stroke="rgba(124,156,255,0.4)"/>
+  <text x="1104" y="583" text-anchor="middle" font-family="-apple-system, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#a8b8ff">MF</text>
+
+  <!-- URL bottom-left -->
+  <text x="80" y="580" font-family="ui-monospace, Consolas, monospace" font-size="16" fill="#8a8a9a">murtazawebsite.vercel.app</text>
+</svg>

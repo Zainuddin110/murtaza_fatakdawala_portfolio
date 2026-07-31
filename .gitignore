@@ -6,3 +6,5 @@ dist
 # Source assets — duplicates of the versions in public/
 /murtaza_image.jpeg
 /Murtaza_Fatakdawala_resume.pdf
+
+.vercel

@@ -13,14 +13,34 @@ export const profile = {
 }
 
 export const stats = [
-  { value: 97, suffix: '%', label: 'Face-Mask Detector accuracy' },
-  { value: 19000, suffix: '', label: 'Faces trained for Moodsic CNN' },
-  { value: 1000, suffix: '+', label: 'Monthly users on CoSwipe' },
+  { value: 97, suffix: '%', label: 'Face-Mask Detector accuracy', progress: 0.97 },
+  { value: 19000, suffix: '', label: 'Faces trained for Moodsic CNN', progress: 0.85 },
+  { value: 1000, suffix: '+', label: 'Monthly users on CoSwipe', progress: 0.72 },
 ]
 
 export const skills = {
   Languages: ['Java', 'Python', 'C/C++', 'C#', 'JavaScript', 'SQL', 'Arduino', 'DART'],
   Technologies: ['React', 'React Native', 'Node.js', 'MongoDB', 'Flask', 'TensorFlow', 'OpenCV', 'Keras', 'SciKit-learn'],
+}
+
+export const techColors = {
+  Java: '#f89820',
+  Python: '#3776ab',
+  'C/C++': '#00599c',
+  'C#': '#68217a',
+  JavaScript: '#f7df1e',
+  SQL: '#00758f',
+  Arduino: '#00979d',
+  DART: '#0175c2',
+  React: '#61dafb',
+  'React Native': '#61dafb',
+  'Node.js': '#8cc84b',
+  MongoDB: '#4db33d',
+  Flask: '#9a9a9a',
+  TensorFlow: '#ff6f00',
+  OpenCV: '#5c3ee8',
+  Keras: '#d00000',
+  'SciKit-learn': '#f7931e',
 }
 
 export const experience = [
@@ -107,6 +127,14 @@ export const projects = [
       'Features: user authentication, account overview, loan applications, transactions, and profile management.',
     ],
   },
+]
+
+export const offTheClock = [
+  'Cars',
+  'F1',
+  'Coffee',
+  'Coding side quests',
+  'New tech',
 ]
 
 export const education = [

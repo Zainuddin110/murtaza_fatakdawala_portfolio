@@ -2,7 +2,7 @@ import ScrollReveal from '../components/reactbits/ScrollReveal.jsx'
 import BlurText from '../components/reactbits/BlurText.jsx'
 import TextScramble from '../components/reactbits/TextScramble.jsx'
 import Marquee from '../components/reactbits/Marquee.jsx'
-import { skills } from '../data/resume.js'
+import { skills, techColors } from '../data/resume.js'
 import section from './Section.module.css'
 import styles from './Skills.module.css'
 
@@ -20,7 +20,14 @@ export default function Skills() {
           <h3 className={styles.groupTitle}>Languages</h3>
           <ul className={styles.chips}>
             {skills.Languages.map((item, i) => (
-              <li key={item} className={styles.chip} style={{ '--i': i }}>{item}</li>
+              <li
+                key={item}
+                className={styles.chip}
+                style={{ '--i': i, '--dot': techColors[item] || 'var(--accent)' }}
+              >
+                <span className={styles.chipDot} aria-hidden="true" />
+                {item}
+              </li>
             ))}
           </ul>
         </div>

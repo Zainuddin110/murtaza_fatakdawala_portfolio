@@ -107,6 +107,14 @@
   transform: scale(1);
 }
 
+.active {
+  color: var(--text) !important;
+}
+.active::before {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
 .toggle {
   display: none;
   background: var(--surface-2);
