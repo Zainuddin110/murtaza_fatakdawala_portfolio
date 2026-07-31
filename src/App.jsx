@@ -1,6 +1,8 @@
 import ClickSpark from './components/reactbits/ClickSpark.jsx'
 import CursorGlow from './components/reactbits/CursorGlow.jsx'
 import ScrollProgress from './components/reactbits/ScrollProgress.jsx'
+import StartLights from './components/StartLights.jsx'
+import TelemetryHUD from './components/TelemetryHUD.jsx'
 import Nav from './sections/Nav.jsx'
 import Hero from './sections/Hero.jsx'
 import About from './sections/About.jsx'
@@ -14,8 +16,10 @@ import Contact from './sections/Contact.jsx'
 export default function App() {
   return (
     <ClickSpark>
+      <StartLights />
       <ScrollProgress />
       <CursorGlow />
+      <TelemetryHUD />
       <Nav />
       <main>
         <Hero />
