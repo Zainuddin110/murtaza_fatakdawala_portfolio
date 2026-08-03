@@ -47,7 +47,7 @@ export default function Nav() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <a href="#top" className={styles.brand} onClick={() => setOpen(false)}>
         <span className={styles.brandCar} aria-hidden="true"><CarIcon /></span>
-        MF
+        Murtaza
       </a>
 
       <div className={styles.right}>
